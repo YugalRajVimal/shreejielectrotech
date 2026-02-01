@@ -75,7 +75,7 @@ export default function SolutionsSection() {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-t border-gray-700">
+      {/* <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-t border-gray-700">
 
         <div className="max-w-7xl mx-auto px-6 py-16 flex  gap-12 text-center">
 
@@ -110,7 +110,7 @@ export default function SolutionsSection() {
           />
 
         </div>
-      </div>
+      </div> */}
 
     </section>
   );

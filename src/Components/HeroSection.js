@@ -101,7 +101,7 @@ export default function HeroSlider() {
               <div className="absolute inset-0 bg-gradient-to-t from-orange-200/60 via-blue-50/20 to-blue-200/5" />
               <div className="relative z-20 flex items-center h-full min-h-[52vh]">
                 <div className="max-w-7xl mx-auto px-6 w-full">
-                  <div className="max-w-2xl bg-white/85 p-10 rounded-3xl shadow-xl backdrop-blur-lg border border-orange-100 animate-fadeinup">
+                  <div className="max-w-3xl bg-white/85 p-10 rounded-3xl shadow-xl backdrop-blur-lg border border-orange-100 animate-fadeinup">
                     <div className="flex items-center gap-2 mb-5">
                       <span className="inline-block bg-blue-100 text-blue-700 font-bold uppercase tracking-widest rounded-full px-3 py-1 text-xs shadow shadow-blue-100">
                         sustainable

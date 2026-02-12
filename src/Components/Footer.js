@@ -8,9 +8,15 @@ import {
   FaLocationArrow
 } from "react-icons/fa6";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import React from "react";
 
 export default function Footer() {
+  // Scroll to top helper
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="relative bg-[#1c232b] text-gray-300">
 
@@ -53,7 +59,7 @@ export default function Footer() {
 
           <div className="text-sm leading-relaxed mb-4 w-full text-center lg:text-left break-words">
             <span className="block text-base font-bold text-white mb-1 font-serif">
-              SHREEJI ELECTROTECH SOLUTIONS Badals
+              SHREEJI ELECTROTECH SOLUTIONS 
             </span>
             <p>
               G/F, B-32, Kh. No 45/2, Gali No.2<br />
@@ -66,6 +72,7 @@ export default function Footer() {
                 <a
                   href="mailto:info@shreejielectrotech.com"
                   className="text-orange-400 hover:text-orange-600 underline break-all"
+                  onClick={handleScrollTop}
                 >
                   info@shreejielectrotech.com
                 </a>
@@ -77,6 +84,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-orange-400 hover:text-orange-600 underline"
+                  onClick={handleScrollTop}
                 >
                   www.shreejielectrotech.com
                 </a>
@@ -86,6 +94,7 @@ export default function Footer() {
                 <a
                   href="tel:+919990900041"
                   className="text-orange-400 hover:text-orange-600 underline"
+                  onClick={handleScrollTop}
                 >
                   +91 9990900041
                 </a>
@@ -192,6 +201,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-orange-500 hover:underline"
+                onClick={handleScrollTop}
               >
                 GoWappily Infotech
               </a>
@@ -232,6 +242,11 @@ function ContactItem({ icon, title, text }) {
 
 /* SOCIAL ICON */
 function SocialIcon({ children, href }) {
+  // When user clicks a social link, scroll to top
+  const handleClick = (e) => {
+    // Open as usual, just scroll to top for smoother UX
+    setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 0);
+  };
   if (href) {
     return (
       <a
@@ -239,6 +254,7 @@ function SocialIcon({ children, href }) {
         target="_blank"
         rel="noopener noreferrer"
         className="w-9 h-9 bg-[#232b34] rounded-full flex items-center justify-center hover:bg-orange-500 transition cursor-pointer"
+        onClick={handleClick}
       >
         {children}
       </a>
@@ -253,10 +269,25 @@ function SocialIcon({ children, href }) {
 
 /* FOOTER LINK */
 function FooterLink({ text, to }) {
+  // If a route is provided, make sure that scrolls to top
+  const navigate = useNavigate();
+  const location = useLocation();
+
   if (to) {
+    const handleLinkClick = (e) => {
+      // If already on page, just scroll to top.
+      if (location.pathname === to) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      // Let Link handle navigation, but move to top immediately after
+      else {
+        // Give navigation time to occur before scrolling
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 0);
+      }
+    };
     return (
       <li className="hover:text-white cursor-pointer transition font-serif">
-        <Link to={to} className="hover:text-white transition">{text}</Link>
+        <Link to={to} className="hover:text-white transition" onClick={handleLinkClick}>{text}</Link>
       </li>
     );
   }

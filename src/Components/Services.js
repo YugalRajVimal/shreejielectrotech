@@ -57,7 +57,7 @@ export default function Services() {
         </p>
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 max-w-4xl mx-auto mb-16 leading-tight">
+        <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900 max-w-4xl mx-auto mb-16 leading-tight">
           Your Trusted Partner for Solar & Electrical Solutions
         </h2>
 
@@ -67,7 +67,7 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={i}
-              className="border border-gray-200 bg-white px-8 py-10 hover:shadow-lg transition duration-300"
+              className="border border-gray-200 bg-white px-8 pt-4 md:py-10 hover:shadow-lg transition duration-300"
             >
               {/* Icon */}
               <div className="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center">

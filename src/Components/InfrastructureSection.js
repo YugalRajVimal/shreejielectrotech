@@ -20,7 +20,7 @@ export default function InfrastructureSection() {
       <section className="bg-black text-white py-28">
   
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">
+        <h2 className="text-4xl md:text-5xl font-bold font-serif text-center mb-20">
           Infrastructure & Construction
         </h2>
   
@@ -55,4 +55,3 @@ export default function InfrastructureSection() {
       </section>
     );
   }
-  

@@ -16,7 +16,7 @@ export default function InnovatorsSection() {
             | About Us
           </p>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 font-serif">
             Committed to Green Energy & Quality Engineering
           </h2>
 

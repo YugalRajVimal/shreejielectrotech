@@ -2,19 +2,7 @@ import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter, FaPhone, FaEnvelope, FaBars, FaChevronDown } from "react-icons/fa6";
-
-
-// import {
-//   FaFacebookF,
-//   FaInstagram,
-//   FaLinkedinIn,
-//   FaXTwitter,
-//   FaPhone,
-//   FaEnvelope,
-//   FaChevronDown,
-//   FaBars,
-//   FaTimes,
-// } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,6 +25,10 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="Alpha Sun" className="h-11" />
+            {/* Heading with font-serif */}
+            <span className="text-2xl font-bold font-serif text-gray-900 hidden sm:block">
+              Alpha Sun
+            </span>
           </div>
 
           {/* Contact */}
@@ -55,10 +47,10 @@ export default function Navbar() {
 
           {/* Social */}
           <div className="flex gap-3">
-            <SocialIcon><FaFacebookF /></SocialIcon>
-            <SocialIcon><FaInstagram /></SocialIcon>
-            <SocialIcon><FaXTwitter /></SocialIcon>
-            <SocialIcon><FaLinkedinIn /></SocialIcon>
+            <SocialIcon href="https://www.facebook.com/shreejielectrotech"><FaFacebookF /></SocialIcon>
+            <SocialIcon href="https://www.instagram.com/shreejielectrotech"><FaInstagram /></SocialIcon>
+            <SocialIcon href="https://twitter.com/shreejielectrotech"><FaXTwitter /></SocialIcon>
+            <SocialIcon href="https://www.linkedin.com/company/shreejielectrotech"><FaLinkedinIn /></SocialIcon>
           </div>
         </div>
       </div>
@@ -69,47 +61,27 @@ export default function Navbar() {
           scrolled ? "shadow-lg" : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center text-white font-medium">
-
-            <NavItem>HOME</NavItem>
-
-            <Dropdown title="ABOUT" />
-
-            <Dropdown title="SERVICES" />
-
-            <NavItem>PROJECTS</NavItem>
-
-            <NavItem>CONTACT</NavItem>
+          <ul className="hidden md:flex items-center text-white font-medium font-serif">
+            <NavItem to="/">HOME</NavItem>
+            <NavItem to="/about">ABOUT</NavItem>
+            <NavItem to="/products">PRODUCTS</NavItem>
+            <NavItem to="/contact">CONTACT</NavItem>
           </ul>
 
           {/* Right Actions */}
-          <div className="flex items-center">
+          <div className="flex items-center justify-between w-full md:w-auto">
 
-            {/* Grid Icon */}
-            <button className="text-white px-4 hover:text-orange-400">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h4M10 6h4M16 6h4M4 12h4M10 12h4M16 12h4M4 18h4M10 18h4M16 18h4"
-                />
-              </svg>
-            </button>
 
             {/* CTA */}
-            <button className="hidden md:block bg-orange-500 text-white px-6 py-6 font-semibold hover:bg-orange-600 transition">
+            <Link
+              to="/contact"
+              className="bg-orange-500 text-white p-2 rounded-md md:px-4 md:py-4 font-semibold hover:bg-orange-600 transition flex items-center justify-center font-serif"
+            >
               GET IN TOUCH
-            </button>
+            </Link>
 
             {/* Mobile Button */}
             <button
@@ -124,16 +96,23 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {mobileOpen && (
           <div className="md:hidden bg-[#1e2329] border-t border-gray-700">
-            {["HOME", "ABOUT", "SERVICES", "PROJECTS", "CONTACT"].map(
-              (item) => (
-                <div
-                  key={item}
-                  className="px-5 py-4 text-white hover:bg-orange-500 transition"
+            {[
+              { label: "HOME", to: "/" },
+              { label: "ABOUT", to: "/about" },
+              { label: "PRODUCTS", to: "/products" },
+              { label: "CONTACT", to: "/contact" }
+            ].map((item) => (
+
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  className="block px-5 py-4 text-white hover:bg-orange-500 transition font-serif"
+                  onClick={() => setMobileOpen(false)}
                 >
-                  {item}
-                </div>
-              )
-            )}
+                  {item.label}
+                </Link>
+           
+            ))}
           </div>
         )}
       </nav>
@@ -142,9 +121,18 @@ export default function Navbar() {
 }
 
 /* Nav Item */
-function NavItem({ children }) {
+function NavItem({ children, to }) {
+  if (to) {
+    return (
+      <li className="px-5 py-6 cursor-pointer hover:text-orange-400 transition font-serif">
+        <Link to={to} className="block h-full w-full font-serif">
+          {children}
+        </Link>
+      </li>
+    );
+  }
   return (
-    <li className="px-5 py-6 cursor-pointer hover:text-orange-400 transition">
+    <li className="px-5 py-6 cursor-pointer hover:text-orange-400 transition font-serif">
       {children}
     </li>
   );
@@ -153,8 +141,8 @@ function NavItem({ children }) {
 /* Dropdown */
 function Dropdown({ title }) {
   return (
-    <li className="relative group px-5 py-6 cursor-pointer">
-      <div className="flex items-center gap-1 hover:text-orange-400 transition">
+    <li className="relative group px-5 py-6 cursor-pointer font-serif">
+      <div className="flex items-center gap-1 hover:text-orange-400 transition font-serif">
         {title}
         <FaChevronDown size={12} />
       </div>
@@ -172,17 +160,22 @@ function Dropdown({ title }) {
 /* Dropdown Item */
 function DropdownItem({ children }) {
   return (
-    <div className="px-4 py-3 text-sm text-gray-700 hover:bg-orange-500 hover:text-white transition cursor-pointer">
+    <div className="px-4 py-3 text-sm text-gray-700 hover:bg-orange-500 hover:text-white transition cursor-pointer font-serif">
       {children}
     </div>
   );
 }
 
 /* Social */
-function SocialIcon({ children }) {
+function SocialIcon({ children, href }) {
   return (
-    <div className="w-9 h-9 rounded-full border flex items-center justify-center text-gray-700 hover:bg-orange-500 hover:text-white transition cursor-pointer">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-9 h-9 rounded-full border flex items-center justify-center text-gray-700 hover:bg-orange-500 hover:text-white transition cursor-pointer"
+    >
       {children}
-    </div>
+    </a>
   );
 }

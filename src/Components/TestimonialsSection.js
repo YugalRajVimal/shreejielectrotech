@@ -31,7 +31,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-28 bg-white">
+    <section className="pt-28 bg-white pb-64">
 
       {/* Heading */}
       <div className="text-center mb-16 px-6">
@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
           | Testimonial
         </p>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif">
           Shining Success Stories
         </h2>
 

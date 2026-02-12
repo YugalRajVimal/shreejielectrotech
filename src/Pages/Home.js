@@ -6,23 +6,24 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Navbar from "./Components/NavBar";
-import HeroSlider from "./Components/HeroSection";
-import Services from "./Components/Services";
-import AboutSection from "./Components/About";
-import SolutionsSection from "./Components/SolutionSection";
-import ConsultationSection from "./Components/ConsultationSection";
-import InfrastructureSection from "./Components/InfrastructureSection";
-import SolarProducts from "./Components/SolarProducts";
-import InnovatorsSection from "./Components/InnovatorSection";
-import GallerySection from "./Components/GallerySection";
-import TestimonialsSection from "./Components/TestimonialsSection";
-import Footer from "./Components/Footer";
+import Navbar from "../Components/NavBar";
+import HeroSlider from "../Components/HeroSection";
+import Services from "../Components/Services";
+import AboutSection from "../Components/About";
+import SolutionsSection from "../Components/SolutionSection";
+import ConsultationSection from "../Components/ConsultationSection";
+import InfrastructureSection from "../Components/InfrastructureSection";
+import SolarProducts from "../Components/SolarProducts";
+import InnovatorsSection from "../Components/InnovatorSection";
+import GallerySection from "../Components/GallerySection";
+import TestimonialsSection from "../Components/TestimonialsSection";
+import Footer from "../Components/Footer";
+import OurClients from "../Components/OurClients";
 
 export default function Home() {
   return (
     <div className="font-sans text-gray-800">
-    <Navbar />
+
 
       {/* Hero Slider */}
       {/* <Swiper
@@ -91,7 +92,6 @@ export default function Home() {
           </div>
         </div>
       </section> */}
-      <Services />
 
       {/* About */}
       {/* <section className="py-20">
@@ -117,6 +117,10 @@ export default function Home() {
         </div>
       </section> */}
       <AboutSection/>
+      <Services />
+
+      <OurClients />
+
 
       {/* Stats */}
       {/* <section className="bg-gray-900 text-white py-16">
@@ -202,7 +206,7 @@ export default function Home() {
       </section> */}
       <SolarProducts/>
       <TestimonialsSection />
-      <Footer />
+
 
       {/* Footer */}
       {/* <footer className="bg-gray-900 text-gray-400 py-8 text-center">

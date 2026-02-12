@@ -23,7 +23,7 @@ export default function GallerySection() {
           | Our Work
         </p>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900">
           Solar Project Gallery
         </h2>
 

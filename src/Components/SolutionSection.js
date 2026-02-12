@@ -44,7 +44,7 @@ export default function SolutionsSection() {
       {/* Top Section */}
       <div className="py-24">
 
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-serif">
           Renewable Energy Solutions
         </h2>
 

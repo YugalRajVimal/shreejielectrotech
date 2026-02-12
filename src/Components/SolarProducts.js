@@ -23,7 +23,7 @@ export default function SolarProducts() {
   return (
     <section className="bg-black text-white py-28">
       {/* Heading */}
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 font-serif">
         Our Products
       </h2>
       <p className="text-center text-lg md:text-xl text-gray-300 mb-16 max-w-2xl mx-auto">
@@ -53,12 +53,12 @@ export default function SolarProducts() {
             <p className="text-gray-400 text-sm leading-relaxed text-center mb-6">
               {item.desc}
             </p>
-            {/* <a
-              href={item.learnMore}
+            <a
+              href="/contact" // Optionally interpolate item.title
               className="mt-auto inline-block bg-orange-500 hover:bg-orange-600 text-white rounded px-6 py-2 font-semibold transition"
             >
-              Learn More
-            </a> */}
+              Enquiry
+            </a>
           </div>
         ))}
       </div>

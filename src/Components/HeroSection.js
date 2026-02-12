@@ -117,7 +117,7 @@ export default function HeroSlider() {
                       Shaping a future where every project, every solution, and every community thrives with responsible energy.
                     </p>
                     <a
-                      href="#products"
+                      href="/products"
                       className="inline-flex items-center gap-2 bg-blue-600 text-white px-7 py-3 rounded-2xl font-semibold shadow-lg hover:bg-blue-800 transition uppercase tracking-wide text-base mt-2"
                     >
                       View Our Products

@@ -24,11 +24,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Alpha Sun" className="h-11" />
-            {/* Heading with font-serif */}
-            <span className="text-2xl font-bold font-serif text-gray-900 hidden sm:block">
-              Alpha Sun
-            </span>
+            <img src="/logo.png" alt="Shree Ji Electrotech" className="h-11" />
+           
           </div>
 
           {/* Contact */}

@@ -208,10 +208,7 @@ export default function Home() {
       <TestimonialsSection />
 
 
-      {/* Footer */}
-      {/* <footer className="bg-gray-900 text-gray-400 py-8 text-center">
-        <p>© 2026 Alpha SunTech. All Rights Reserved.</p>
-      </footer> */}
+     
     </div>
   );
 }

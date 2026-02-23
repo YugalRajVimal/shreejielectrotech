@@ -13,7 +13,7 @@ export default function ConsultationSection() {
         <div className="flex justify-center items-center h-full w-full mb-10 lg:mb-0">
           <img
             src="https://images.unsplash.com/photo-1592833159155-c62df1b65634"
-            alt="Sleek modern solar panels under a vibrant blue sky with clouds, symbolizing clean energy."
+            alt="Technical solar PV inspection and engineering"
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-60 sm:h-72 md:h-96 lg:h-[560px] object-cover rounded-xl shadow-lg"
           />
         </div>
@@ -23,60 +23,83 @@ export default function ConsultationSection() {
 
           {/* Label */}
           <p className="text-orange-500 font-semibold uppercase tracking-widest mb-4 text-sm sm:text-base">
-            We do Business Worldwide
+            Solar PV Power Projects
           </p>
 
           {/* Heading */}
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 sm:mb-8">
-            We ensure quality & support.<br />
-            People love us &amp; we love them
+            Integrated Engineering, Inspection & Project Assurance
           </h2>
 
-          {/* About Us */}
+          {/* Description/Overview */}
           <div className="mb-8 sm:mb-12">
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl">
-              We are dedicated to advancing green energy and sustainable solutions for a better future.
-              <br /><br />
-              With extensive experience in renewable technologies, our team provides a wide range of engineering and consulting services for solar, infrastructure, and energy projects. We emphasize innovation, quality, and customer satisfaction in every project.
-              <br /><br />
-              Our goal is to equip businesses and individuals with reliable, eco-friendly energy systems, making a positive impact worldwide. We value partnerships, continuous improvement, and open communication for long-term success.
-              <br /><br />
-              Using modern technology and best practices, we offer affordable, sustainable energy solutions trusted by clients internationally.
+              Solar energy is a cornerstone of global energy transition. With rising demand for dependable, clean power, the success of every solar PV project relies on meticulous planning, technical excellence, and trusted inspection at each stage.<br /><br />
+              We deliver end-to-end support for developers, EPCs, and investors: from feasibility and engineering, thorough inspections, to project management consultancy. Our 10+ GW international track record covers module and cell inspection, substation design, transformer & switchgear audits, and energy yield analysis.<br /><br />
+              Every project, from pre-bid to asset commissioning, is optimized for bankability, reliability, and maximum performance—empowering you to build resilient, sustainable solar portfolios.
             </p>
-          </div>
+          </div> 
         </div>
       </div>
       
-      {/* Commitment Cards */}
+      {/* Commitment Cards / Offerings */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-12 mt-12 sm:mt-16 p-4 sm:p-8">
-          {/* Our Commitment */}
+          {/* Our Capabilities */}
           <InfoCard
             icon={<FaGlobe />}
-            title="Our Commitment"
+            title="Our Capabilities"
             desc={
               <>
-                Our commitment is to fulfill the entire customer requirement and have a fast product development cycle to increase the capacity of production. With the strength of a respective past, the perfect present and the prospective future, we have strongly moved a long way – growing along with our clients.
-                <br />
-                <br />
-                The good quality engineering products has always been in demand for good users and we are dedicated to provide such good quality products at reasonable price that suit your applications.
+                <span className="font-semibold">We deliver solar project support through five core pillars:</span>
+                <ul className="list-disc pl-5 mt-3 space-y-2">
+                  <li>
+                    <b>Engineering &amp; Design:</b> Feasibility Studies (PFR), DPR, Bankable DPR, Energy Yield Assessments, Detailed Plant &amp; Substation Design.
+                  </li>
+                  <li>
+                    <b>Inspection &amp; Quality Assurance:</b> Module/Cell Inspection (India, China, Vietnam, Malaysia, Cambodia), Raw Material Validation, Factory/Supplier Audit, In-Process Inspection, Specialized Audits.
+                  </li>
+                  <li>
+                    <b>Project Management Consultancy (PMC):</b> Field Quality Monitoring, Construction Supervision, Acceptance Tests (PR, CUF, PLF), O&amp;M Planning, HOTO.
+                  </li>
+                  <li>
+                    <b>Owner’s &amp; Lender’s Engineering:</b> Performance Validation, Design Review, Risk Assessment, Bankable Reporting.
+                  </li>
+                  <li>
+                    <b>Sustainability &amp; Carbon Integration:</b> Net Zero &amp; RE100 Advisory, Carbon Audits, Sustainability Consulting.
+                  </li>
+                </ul>
               </>
             }
           />
 
-          {/* Our Products */}
+          {/* Our Offerings */}
           <InfoCard
             icon={<FaThumbsUp />}
-            title="Our Products"
+            title="Our Inspection-Centric Offerings"
             desc={
               <>
-                We offer wide range of good quality junction boxes, high/medium/low voltage switchgears, lighting poles, cable trays, cable glands and other solar equipments. You can buy our products through our online shop.
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>
+                    <b>Technical Audits &amp; Inspections:</b> Module, cell, wafer, battery, and electrolyser inspections across Asia; Factory Acceptance Testing, reliability witnessing, and QAP finalization.
+                  </li>
+                  <li>
+                    <b>Engineering Design &amp; Documentation:</b> GA Drawings, GTPs, SLDs, Load Flow Studies, and grid compliance plans.
+                  </li>
+                  <li>
+                    <b>Yield &amp; Performance Assessment:</b> PVSyst simulations, EYA reports, PR/CUF benchmarking, optimization audits.
+                  </li>
+                  <li>
+                    <b>Project Feasibility &amp; Risk Advisory:</b> Technical Due Diligence, bankable DPRs for financing, Lender’s Independent Engineering services.
+                  </li>
+                  <li>
+                    <b>Consultancy Services:</b> Project management, carbon audits, Net Zero transition, and energy transition strategies.
+                  </li>
+                </ul>
                 <br />
-                <br />
-                Junction boxes provide electrical interconnections between the solar modules and protect the solar cells from damage.
-                <br />
-                <br />
-                We provide Junction boxes having high life time, resistant to adverse environmental effects, wide range of temperatures and humidity conditions of operation, achieved by better design, good quality of materials and skilled technical team.
+                <span className="font-medium">
+                  To know more about our services, connect with us.
+                </span>
               </>
             }
           />
@@ -101,9 +124,9 @@ function InfoCard({ icon, title, desc }) {
       </h4>
 
       {/* Text */}
-      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+      <div className="text-gray-600 text-sm sm:text-base leading-relaxed">
         {desc}
-      </p>
+      </div>
     </div>
   );
 }

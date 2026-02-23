@@ -48,142 +48,79 @@ export default function Footer() {
       </div>
 
       {/* MAIN FOOTER */}
-      <div className="pt-40 pb-16 max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-        {/* ABOUT */}
-        <div className="flex flex-col items-center lg:items-start">
-          <img
-            src="/logo.png"
-            alt="SHREEJI ELECTROTECH SOLUTIONS"
-            className="h-12 mb-6 mx-auto lg:mx-0"
-          />
+  {/* MAIN FOOTER */}
+<div className="pt-32 pb-16 max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-          <div className="text-sm leading-relaxed mb-4 w-full text-center lg:text-left break-words">
-            <span className="block text-base font-bold text-white mb-1 font-serif">
-              SHREEJI ELECTROTECH SOLUTIONS 
-            </span>
-            <p>
-              G/F, B-32, Kh. No 45/2, Gali No.2<br />
-              Near Karan public School, Sadatpur Extn.<br />
-              Karawal Nagar. DeIhi-110094
-            </p>
-            <div className="mt-2">
-              <span className="block">
-                <span className="font-semibold">E-mail:</span>{" "}
-                <a
-                  href="mailto:info@shreejielectrotech.com"
-                  className="text-orange-400 hover:text-orange-600 underline break-all"
-                  onClick={handleScrollTop}
-                >
-                  info@shreejielectrotech.com
-                </a>
-              </span>
-              <span className="block">
-                <span className="font-semibold">Website:</span>{" "}
-                <a
-                  href="https://www.shreejielectrotech.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-orange-400 hover:text-orange-600 underline"
-                  onClick={handleScrollTop}
-                >
-                  www.shreejielectrotech.com
-                </a>
-              </span>
-              <span className="block">
-                <span className="font-semibold">Phone:</span>{" "}
-                <a
-                  href="tel:+919990900041"
-                  className="text-orange-400 hover:text-orange-600 underline"
-                  onClick={handleScrollTop}
-                >
-                  +91 9990900041
-                </a>
-              </span>
-              <span className="block">
-                <span className="font-semibold">Contact Person:</span>{" "}
-                Mr. Badal Singh
-              </span>
-            </div>
-          </div>
+{/* OUR SERVICES */}
+<FooterColumn
+  title="Our Services"
+  links={[
+    "Technical Audits & Quality Inspection",
+    "Consultancy (Project Management, RE 100, Net Zero)",
+    "Engineering Design & Development",
+    "Carbon Audit & Energy Transition",
+  ]}
+/>
 
-      
-        </div>
+{/* OUR EXPERTISE */}
+<FooterColumn
+  title="Our Expertise"
+  links={[
+    "Solar PV Power Projects",
+    "Wind Power Projects",
+    "Energy Storage Solutions",
+    "Power Transmission Infrastructure",
+    "Hydro Power Projects",
+    "E-mobility",
+    "Green Hydrogen Projects",
+    "Bio-fuels Projects",
+    "Green Building/Energy Efficiency",
+  ]}
+/>
+
+{/* ABOUT US */}
+<FooterColumn
+  title="Quick Links"
+  links={[
+    "Home",
+    "About",
+    "Contact"
+  ]}
+/>
 
 
-        {/* QUICK LINKS */}
-        <div>
-          <h4 className="text-white font-semibold text-lg mb-6 font-serif">
-            Quick Links
-          </h4>
-          <ul className="space-y-3 text-sm">
-            <FooterLink text="Home" to="/" />
-            <FooterLink text="About Us" to="/about" />
-            <FooterLink text="Products" to="/products" />
-            <FooterLink text="Contact" to="/contact" />
-          </ul>
-        </div>
 
-        {/* PRODUCTS */}
-        <div>
-          <h4 className="text-white font-semibold text-lg mb-6 font-serif">
-            Our Products
-          </h4>
-          <ul className="space-y-3 text-sm">
-            <FooterLink text="Junction Box" to="/products" />
-            <FooterLink text="Switchgears (High/Medium/Low Voltage)" to="/products" />
-            <FooterLink text="Lighting Poles" to="/products" />
-            <FooterLink text="Cable Trays" to="/products" />
-            <FooterLink text="Cable Glands" to="/products" />
-            <FooterLink text="Solar Equipment" to="/products" />
-          </ul>
-        </div>
+{/* CONTACT US */}
+<div>
+  <h4 className="text-white font-semibold text-xl mb-6">
+    Contact Us
+  </h4>
 
-        {/* SUBSCRIBE */}
-        <div className="w-full max-w-sm sm:max-w-none sm:w-auto  mx-auto sm:mx-0">
-       
-          <div>
-          <h4 className="text-white font-semibold text-lg mb-6 text-center sm:text-left font-serif">
-            Subscribe
-          </h4>
-          <form className="flex flex-col sm:flex-row items-stretch sm:items-center mb-4 gap-2 w-full">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full bg-[#232b34] px-4 py-3 text-sm outline-none rounded sm:rounded-l sm:rounded-r-none text-white placeholder:text-gray-400"
-            />
-            <button
-              type="submit"
-              className="w-full sm:w-auto bg-orange-500 px-4 py-3 flex items-center justify-center hover:bg-orange-600 transition rounded sm:rounded-r sm:rounded-l-none gap-2"
-              aria-label="Subscribe"
-            >
-              <FaEnvelope />
-              <span className="block sm:hidden">Subscribe</span>
-            </button>
-          </form>
-          <label className="flex items-center gap-2 text-xs text-gray-300 w-full justify-center sm:justify-start">
-            <input type="checkbox" className="accent-orange-500" />
-            I agree with the terms and conditions
-          </label>
-            </div>
+  <div className="space-y-4 text-gray-400 text-sm">
 
-                   {/* Social */}
-                   <div className="flex gap-3 justify-center lg:justify-center mb-2 mt-10">
-            <SocialIcon href="https://www.facebook.com/shreejielectrotech">
-              <FaFacebookF />
-            </SocialIcon>
-            <SocialIcon href="https://www.instagram.com/shreejielectrotech">
-              <FaInstagram />
-            </SocialIcon>
-            <SocialIcon href="https://twitter.com/shreejielectrotech">
-              <FaXTwitter />
-            </SocialIcon>
-            <SocialIcon href="https://www.linkedin.com/company/shreejielectrotech">
-              <FaLinkedinIn />
-            </SocialIcon>
-          </div>
-     
-        </div>
-      </div>
+    <div className="flex gap-3 items-start">
+      <FaLocationArrow className="mt-1 text-orange-500 shrink-0" />
+      <p>
+        G/F, B-32, Kh. No 45/2, Gali No.2<br />
+        Near Karan public School, Sadatpur Extn.<br />
+        Karawal Nagar. DeIhi-110094
+      </p>
+    </div>
+
+    <div className="flex gap-3 items-center">
+      <FaEnvelope className="text-orange-500" />
+      <span>info@shreejielectrotech.com</span>
+    </div>
+
+    <div className="flex gap-3 items-center">
+      <FaPhone className="text-orange-500" />
+      <span>+91 9990900041</span>
+    </div>
+
+  </div>
+</div>
+
+</div>
 
       {/* BOTTOM BAR */}
       <div className="border-t border-gray-700">
@@ -295,5 +232,27 @@ function FooterLink({ text, to }) {
     <li className="hover:text-white cursor-pointer transition font-serif">
       {text}
     </li>
+  );
+}
+
+
+function FooterColumn({ title, links }) {
+  return (
+    <div>
+      <h4 className="text-white font-semibold text-xl mb-6">
+        {title}
+      </h4>
+
+      <ul className="space-y-3 text-gray-400 text-sm">
+        {links.map((link, i) => (
+          <li
+            key={i}
+            className="hover:text-white transition cursor-pointer"
+          >
+            {link}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

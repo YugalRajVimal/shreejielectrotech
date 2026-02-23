@@ -11,14 +11,23 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
+// Use the fields as in ReachUsForm.js
+const initialFormState = {
+  fullName: "",
+  company: "",
+  jobTitle: "",
+  country: "",
+  email: "",
+  phone: "",
+  inquiry: "",
+  requirements: "",
+  marketingConsent: true,
+  nonMarketingConsent: true,
+};
+
 export default function ContactUs() {
   const [showTop, setShowTop] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ ...initialFormState });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
@@ -30,7 +39,11 @@ export default function ContactUs() {
   }, []);
 
   function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   }
 
   function handleSubmit(e) {
@@ -38,8 +51,36 @@ export default function ContactUs() {
     // Here you would post to your API or email service
     setFormSubmitted(true);
     setTimeout(() => setFormSubmitted(false), 4000);
-    setForm({ name: "", email: "", phone: "", message: "" });
+    setForm({ ...initialFormState });
   }
+
+  // Input utility
+  const Input = ({ name, placeholder, type = "text", required = false }) => (
+    <input
+      required={required}
+      type={type}
+      name={name}
+      value={form[name]}
+      onChange={handleChange}
+      placeholder={placeholder}
+      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:outline-none text-gray-900"
+    />
+  );
+
+  const Select = ({ name, placeholder }) => (
+    <select
+      name={name}
+      value={form[name]}
+      onChange={handleChange}
+      className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:outline-none text-gray-900 bg-white"
+      required
+    >
+      <option value="">{placeholder}</option>
+      <option>India</option>
+      <option>USA</option>
+      <option>Singapore</option>
+    </select>
+  );
 
   return (
     <div className="relative pt-28 sm:pt-32 bg-gray-100 min-h-screen">
@@ -130,7 +171,7 @@ export default function ContactUs() {
       </div>
       {/* ========== CONTACT SECTION (Form + Map) ========== */}
       <section className="pt-10 sm:pt-20 pb-64 sm:pb-48">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 items-stretch">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1  gap-10 sm:gap-14 items-stretch">
           {/* Contact Form Card */}
           <div className="bg-white rounded-2xl shadow-lg border p-6 sm:p-10 flex flex-col justify-center min-h-[440px] sm:min-h-[500px] relative z-10">
             <div className="flex items-center gap-3 mb-8">
@@ -147,60 +188,89 @@ export default function ContactUs() {
             <form className="space-y-5 sm:space-y-6" autoComplete="off" onSubmit={handleSubmit}>
               <div>
                 <label className="block font-medium text-gray-700 mb-2">
-                  Name
+                  Full Name *
                 </label>
-                <input
-                  required
-                  type="text"
-                  name="name"
-                  className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:outline-none text-gray-900"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Your Name"
-                />
+                <Input name="fullName" placeholder="Your Full Name" required />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-gray-700 mb-2">
-                    Email
+                    Company
                   </label>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:outline-none text-gray-900"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="Email Address"
-                  />
+                  <Input name="company" placeholder="Company Name" />
+                </div>
+                <div>
+                  <label className="block font-medium text-gray-700 mb-2">
+                    Job Title
+                  </label>
+                  <Input name="jobTitle" placeholder="Job Title" />
+                </div>
+              </div>
+              <div>
+                <label className="block font-medium text-gray-700 mb-2">
+                  Country *
+                </label>
+                <Select name="country" placeholder="Select Country" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-medium text-gray-700 mb-2">
+                    Email *
+                  </label>
+                  <Input name="email" type="email" placeholder="Email Address" required />
                 </div>
                 <div>
                   <label className="block font-medium text-gray-700 mb-2">
                     Phone
                   </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:outline-none text-gray-900"
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="Phone Number"
-                  />
+                  <Input name="phone" placeholder="Phone Number" />
                 </div>
               </div>
               <div>
                 <label className="block font-medium text-gray-700 mb-2">
-                  Message
+                  Inquiry Type *
+                </label>
+                <Select name="inquiry" placeholder="Select Inquiry Type" />
+              </div>
+              <div>
+                <label className="block font-medium text-gray-700 mb-2">
+                  Requirements *
                 </label>
                 <textarea
                   required
-                  name="message"
-                  rows={5}
+                  name="requirements"
+                  rows={4}
                   className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-200 focus:outline-none text-gray-900 resize-none"
-                  value={form.message}
+                  value={form.requirements}
                   onChange={handleChange}
-                  placeholder="How can we help you?"
-                ></textarea>
+                  placeholder="Your requirements (brief detail)"
+                />
+              </div>
+              <div className="space-y-3 pt-2 text-sm text-gray-600">
+                <label className="flex items-start gap-2">
+                  <input
+                    type="checkbox"
+                    name="marketingConsent"
+                    checked={form.marketingConsent}
+                    onChange={handleChange}
+                    className="mt-1"
+                  />
+                  <span>
+                    I consent to receive marketing text messages at the phone number provided. Message & data rates may apply.
+                  </span>
+                </label>
+                <label className="flex items-start gap-2">
+                  <input
+                    type="checkbox"
+                    name="nonMarketingConsent"
+                    checked={form.nonMarketingConsent}
+                    onChange={handleChange}
+                    className="mt-1"
+                  />
+                  <span>
+                    I consent to receive non-marketing messages including updates and reminders.
+                  </span>
+                </label>
               </div>
               <button
                 type="submit"

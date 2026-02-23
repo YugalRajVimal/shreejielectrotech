@@ -1,107 +1,146 @@
-import { FaBoxOpen, FaBolt, FaLightbulb, FaTools, FaServer, FaCubes, FaPlug, FaSolarPanel } from "react-icons/fa";
-import { MdOutlineEngineering } from "react-icons/md";
-import { TbBulb } from "react-icons/tb";
-import { RiBuilding2Line } from "react-icons/ri";
+import {
+  FaClipboardList,
+  FaBuilding,
+  FaLeaf,
+} from "react-icons/fa6";
+import { MdEngineering } from "react-icons/md";
 
 export default function Services() {
-  const services = [
+  // Five core pillars with headings (front) and service lists as descriptions (back)
+  const pillars = [
     {
-      title: "Junction Boxes",
-      desc: "We offer a wide range of junction boxes made with electrolytic copper/brass, tin plated or compounded ABS for high UV resistance. Designed for high lifetime and protection in adverse environments.",
-      icon: <FaBoxOpen />,
+      heading: "Engineering & Design",
+      icon: <MdEngineering className="text-3xl" />,
+      services: [
+        "Feasibility Studies (PFR), DPR, Bankable DPR",
+        "PVsyst-based Energy Yield Assessment (EYA)",
+        "Pre-bid and Detailed Design & Engineering",
+        "Substation design up to 765kV (AIS/GIS)",
+        "Hybrid plant design (Solar + Wind + BESS)"
+      ]
     },
     {
-      title: "High/Medium/Low Voltage Switchgears",
-      desc: "Quality-engineered switchgears for reliable power distribution across a range of voltages. Designed for durability and safety to suit various applications.",
-      icon: <FaBolt />,
+      heading: "Inspection & Quality Assurance",
+      icon: <FaLeaf className="text-3xl" />,
+      services: [
+        "PV Module Inspection  (India, China, Vietnam, Malaysia, Cambodia)",
+        "PV Cell Inspection & Raw Material Validation",
+        "In-Process Inspection, PSI/PDI, CLC/CLM",
+        "Factory/Supplier Audit & Technical Due Diligence",
+        "Specialized inspections: Transformer, HT Panels, HV/EHV Switchgear, Cables, Structures"
+      ]
     },
     {
-      title: "Lighting Poles & Street Lights",
-      desc: "Strong, long-life lighting poles and efficient, low-maintenance solar street lights for public and industrial spaces.",
-      icon: <FaLightbulb />,
+      heading: "Project Management Consultancy (PMC)",
+      icon: <FaClipboardList className="text-3xl" />,
+      services: [
+        "Field Quality Monitoring & Construction Supervision",
+        "Plant Acceptance Tests (PR, CUF, PLF)",
+        "HOTO, O&M Planning & Asset Lifecycle Management",
+        "Bid Management, Tender & RFQ Documentation"
+      ]
     },
     {
-      title: "Cable Trays & Cable Glands",
-      desc: "Robust cable trays and high-quality cable glands ensuring secure and organized cable management for solar and industrial projects.",
-      icon: <FaServer />,
+      heading: "Owner’s & Lender’s Engineering",
+      icon: <FaBuilding className="text-3xl" />,
+      services: [
+        "Performance validation planning",
+        "Independent Engineering Services",
+        "Design Review & Risk Assessment",
+        "Project Monitoring for Bankable Reporting",
+        "Support for Financial Closure & Debt Tranche Disbursement"
+      ]
     },
     {
-      title: "Solar Plant EPC & Engineering",
-      desc: "Turnkey engineering, procurement, and construction for world-class solar plant installations. From design to execution with skilled technical support.",
-      icon: <MdOutlineEngineering />,
-    },
-    {
-      title: "Operation & Maintenance",
-      desc: "Complete maintenance support, routine inspections, and technical guidance to keep your solar and electrical systems at peak performance.",
-      icon: <FaTools />,
-    },
-    {
-      title: "Product Customization",
-      desc: "Fast product development cycle to match customer specifications, ensuring fit-for-purpose solar and electrical products.",
-      icon: <FaCubes />,
-    },
-    {
-      title: "Consultation & Support",
-      desc: "Expert advice and support for project planning, product selection, and after-sales service, powered by experience and customer-centric commitment.",
-      icon: <FaPlug />,
+      heading: "Sustainability & Carbon Integration",
+      icon: <FaLeaf className="text-3xl" />,
+      services: [
+        "Process optimization services",
+        "Net Zero & RE100 Advisory",
+        "Carbon Audits, Reporting & Offset Strategy",
+        "Integration of solar into corporate sustainability frameworks"
+      ]
     },
   ];
 
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
-
-        {/* Top Label */}
         <p className="text-orange-500 font-semibold uppercase tracking-widest mb-3">
-          | Our Services
+          | Our Capabilities
         </p>
-
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900 max-w-4xl mx-auto mb-16 leading-tight">
-          Your Trusted Partner for Solar & Electrical Solutions
+        <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900 max-w-4xl mx-auto mb-6 leading-tight">
+          We deliver solar project support through five core pillars
         </h2>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          {services.map((service, i) => (
-            <div
-              key={i}
-              className="border border-gray-200 bg-white px-8 pt-4 md:py-10 hover:shadow-lg transition duration-300"
-            >
-              {/* Icon */}
-              <div className="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-
-                {/* Dotted Circle */}
-                <div className="absolute inset-0 rounded-full border border-dashed border-orange-400" />
-
-                {/* Icon Circle */}
-                <div className="w-14 h-14 rounded-full flex items-center justify-center text-orange-500 text-2xl bg-white z-10">
-                  {service.icon}
-                </div>
-
-              </div>
-
-              {/* Title */}
-              <h4 className="text-lg font-bold text-gray-900 mb-4">
-                {service.title}
-              </h4>
-
-              {/* Description */}
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                {service.desc}
-              </p>
-
-              {/* Learn More */}
-              {/* <button className="text-sm font-semibold text-gray-900 flex items-center justify-center gap-2 mx-auto hover:text-orange-500 transition">
-                Learn More
-                <span className="text-lg">→</span>
-              </button> */}
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
+          {pillars.map((pillar, idx) => (
+            <CapabilityCard
+              key={idx}
+              icon={pillar.icon}
+              heading={pillar.heading}
+              services={pillar.services}
+            />
           ))}
-
         </div>
       </div>
+      <style>{`
+        .flip-card {
+          perspective: 1200px;
+        }
+        .flip-card-inner {
+          transition: transform 0.6s cubic-bezier(.42,0,.2,1);
+          transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner, .flip-card:focus-within .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+          backface-visibility: hidden;
+        }
+        .flip-card-front {
+          z-index: 2;
+        }
+        .flip-card-back {
+          transform: rotateY(180deg);
+        }
+      `}</style>
     </section>
+  );
+}
+
+// The front only displays the heading (and icon). The back shows the description/list.
+function CapabilityCard({ icon, heading, services }) {
+  return (
+    <div
+      className="flip-card group w-full min-w-[300px] h-[350px] sm:h-[370px] flex flex-col  cursor-pointer focus:outline-none"
+      tabIndex={0}
+    >
+      <div className="flip-card-inner relative w-full h-full duration-700">
+        {/* Front: Only Heading and Icon */}
+        <div className="flip-card-front absolute w-full h-full bg-white border rounded-2xl shadow-lg flex flex-col items-center justify-center gap-4 py-6 px-3 transition-all group-hover:shadow-2xl">
+          <span className="inline-flex items-center justify-center w-14 h-14 rounded-full border border-orange-400 bg-white text-orange-500 shadow-md text-3xl mb-1.5">
+            {icon}
+          </span>
+          <h4 className="text-xl font-bold font-serif text-gray-900 text-center mb-2">
+            {heading}
+          </h4>
+        </div>
+        {/* Back: Description/List */}
+        <div className="flip-card-back absolute w-full h-full bg-orange-50 border border-orange-200 rounded-2xl shadow-xl flex flex-col items-center justify-center p-6">
+          <span className="inline-flex items-center justify-center w-14 h-14 rounded-full border border-orange-400 bg-white text-orange-500 shadow text-3xl mb-2">
+            {icon}
+          </span>
+          <h4 className="text-lg font-bold font-serif text-orange-700 text-center mb-2">{heading}</h4>
+          <ul className="text-gray-800 text-sm font-semibold text-left mt-4 space-y-2 px-2">
+            {services.map((item, i) => (
+              <li key={i} className="flex items-start">
+                <span className="inline-block mt-1 mr-2 w-1.5 h-1.5 bg-orange-400 rounded-full flex-shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }

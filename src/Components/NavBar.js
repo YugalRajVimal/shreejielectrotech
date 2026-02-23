@@ -45,8 +45,7 @@ export default function Navbar() {
           {/* Social */}
           <div className="flex gap-3">
             <SocialIcon href="https://www.facebook.com/shreejielectrotech"><FaFacebookF /></SocialIcon>
-            <SocialIcon href="https://www.instagram.com/shreejielectrotech"><FaInstagram /></SocialIcon>
-            <SocialIcon href="https://twitter.com/shreejielectrotech"><FaXTwitter /></SocialIcon>
+          
             <SocialIcon href="https://www.linkedin.com/company/shreejielectrotech"><FaLinkedinIn /></SocialIcon>
           </div>
         </div>
@@ -64,7 +63,7 @@ export default function Navbar() {
           <ul className="hidden md:flex items-center text-white font-medium font-serif">
             <NavItem to="/">HOME</NavItem>
             <NavItem to="/about">ABOUT</NavItem>
-            <NavItem to="/products">PRODUCTS</NavItem>
+            {/* <NavItem to="/products">PRODUCTS</NavItem>  */}
             <NavItem to="/contact">CONTACT</NavItem>
           </ul>
 
@@ -96,7 +95,7 @@ export default function Navbar() {
             {[
               { label: "HOME", to: "/" },
               { label: "ABOUT", to: "/about" },
-              { label: "PRODUCTS", to: "/products" },
+              // { label: "PRODUCTS", to: "/products" },
               { label: "CONTACT", to: "/contact" }
             ].map((item) => (
 

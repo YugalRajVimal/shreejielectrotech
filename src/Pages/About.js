@@ -30,7 +30,7 @@ const About = () => {
               We support developers, EPCs, and investors with independent engineering, plant audits, and performance validation—ensuring your projects are efficient, reliable, and bankable.
             </p>
             <a
-              href="mailto:info@sunkonnect.co"
+              href="mailto:info@shreejielectrotech.com"
               className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-orange-600 transition"
             >
               <svg height="20" width="20" fill="none" viewBox="0 0 24 24">

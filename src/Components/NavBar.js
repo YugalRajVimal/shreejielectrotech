@@ -44,9 +44,10 @@ export default function Navbar() {
 
           {/* Social */}
           <div className="flex gap-3">
-            <SocialIcon href="https://www.facebook.com/shreejielectrotech"><FaFacebookF /></SocialIcon>
-          
-            <SocialIcon href="https://www.linkedin.com/company/shreejielectrotech"><FaLinkedinIn /></SocialIcon>
+            <SocialIcon href="https://x.com/Shreeji_electro"><FaXTwitter /></SocialIcon>
+            <SocialIcon href="https://www.facebook.com/share/18Ev2j8hAZ/"><FaFacebookF /></SocialIcon>
+            <SocialIcon href="https://www.instagram.com/shreeji_electrotech_solutions?igsh=dHJiNHNrbXQ1ZWYz"><FaInstagram /></SocialIcon>
+            <SocialIcon href="https://www.linkedin.com/in/shree-ji-electrotech-solutions-8b9aa6250"><FaLinkedinIn /></SocialIcon>
           </div>
         </div>
       </div>

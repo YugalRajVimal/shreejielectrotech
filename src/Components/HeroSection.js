@@ -135,17 +135,17 @@ export default function HeroSlider() {
 
       {/* Social Bar */}
       <div className="absolute right-5 top-[54%] -translate-y-1/2 z-30 hidden md:flex flex-col gap-3 drop-shadow-lg">
-        <SocialIcon label="Facebook" href="https://facebook.com/sunkonnect">
+        <SocialIcon label="X (Twitter)" href="https://x.com/Shreeji_electro">
+          <FaXTwitter />
+        </SocialIcon>
+        <SocialIcon label="Facebook" href="https://www.facebook.com/share/18Ev2j8hAZ/">
           <FaFacebookF />
         </SocialIcon>
-        <SocialIcon label="Instagram" href="https://instagram.com/sunkonnect">
+        <SocialIcon label="Instagram" href="https://www.instagram.com/shreeji_electrotech_solutions?igsh=dHJiNHNrbXQ1ZWYz">
           <FaInstagram />
         </SocialIcon>
-        <SocialIcon label="LinkedIn" href="https://linkedin.com/company/sunkonnect">
+        <SocialIcon label="LinkedIn" href="https://www.linkedin.com/in/shree-ji-electrotech-solutions-8b9aa6250">
           <FaLinkedinIn />
-        </SocialIcon>
-        <SocialIcon label="X (Twitter)" href="https://twitter.com/sunkonnect">
-          <FaXTwitter />
         </SocialIcon>
       </div>
 

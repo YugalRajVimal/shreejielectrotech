@@ -112,9 +112,9 @@ export default function ContactUs() {
 
       {/* Contact Cards */}
       <div className=" mx-auto my-6 sm:my-10 px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {/* Phone */}
-          <div className="bg-white rounded-3xl shadow-lg border border-orange-100 p-4 sm:p-4 flex flex-col items-center text-center transition hover:-translate-y-1 hover:shadow-2xl duration-300">
+          {/* <div className="bg-white rounded-3xl shadow-lg border border-orange-100 p-4 sm:p-4 flex flex-col items-center text-center transition hover:-translate-y-1 hover:shadow-2xl duration-300">
             <div className="flex items-center justify-center bg-orange-100 rounded-full w-14 h-14 sm:w-16 sm:h-16 mb-5">
               <FaPhone className="w-6 h-6 sm:w-7 sm:h-7 text-orange-600 rotate-90" />
             </div>
@@ -125,7 +125,7 @@ export default function ContactUs() {
               </a>
             </div>
             <div className="mt-2 font-medium text-orange-700 text-sm">Contact: Mr. Badal Singh</div>
-          </div>
+          </div> */}
           {/* Email */}
           <div className="bg-white rounded-3xl shadow-lg border border-orange-100 p-4 sm:p-4 flex flex-col items-center text-center transition hover:-translate-y-1 hover:shadow-2xl duration-300">
             <div className="flex items-center justify-center bg-orange-100 rounded-full w-14 h-14 sm:w-16 sm:h-16 mb-5">

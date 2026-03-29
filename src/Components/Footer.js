@@ -128,7 +128,7 @@ export default function Footer() {
           <p className="text-center md:text-left flex-1">
             © 2025 All Rights Reserved By{" "}
             <span className="text-orange-500 font-semibold font-serif">
-              SHREEJI ELECTROTECH SOLUTIONS Badals
+              SHREEJI ELECTROTECH SOLUTIONS 
             </span>
             <br />
             <span className="flex flex-col sm:flex-row items-center gap-1 text-xs md:text-sm justify-center md:justify-start">
